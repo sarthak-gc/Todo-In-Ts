@@ -1,7 +1,7 @@
 import axios from "axios";
 const addTodo = async ({
   description,
-  title,
+  title, 
   dueDate,
   timeLimit,
   priority,

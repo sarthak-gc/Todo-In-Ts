@@ -31,6 +31,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await register(formData);
+      alert(response.data);
       return response;
     } catch (error) {
       console.error("Registration failed:", error);

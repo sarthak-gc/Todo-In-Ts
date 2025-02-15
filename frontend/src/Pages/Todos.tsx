@@ -74,6 +74,7 @@ const Todos = () => {
     const response = await addTodo(todo);
 
     if (response.data) {
+      alert("Todo added successfully");
       const newTodo: Todo = response.data.todo;
       setTodos((prevTodos) => [...prevTodos, newTodo]);
     }

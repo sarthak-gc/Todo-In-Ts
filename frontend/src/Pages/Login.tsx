@@ -23,6 +23,8 @@ const Login = () => {
     const response = await login(credentials);
 
     if (response.data.code) {
+      alert(response.data.msg);
+
       localStorage.setItem("token", response.data.code);
       navigate("/todo");
     } else {

@@ -13,7 +13,7 @@ const addTodo = async ({
   priority: string;
 }) => {
   const response = await axios.post(
-    "http://localhost:3000/todo/addTodo",
+    "https://todo-in-ts.onrender.com/todo/addTodo",
     {
       description,
       title,

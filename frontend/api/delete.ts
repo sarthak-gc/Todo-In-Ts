@@ -2,7 +2,7 @@ import axios from "axios";
 
 const deleteTodo = async (id: string) => {
   const response = await axios.delete(
-    `http://localhost:3000/todo/deleteTodo/${id}`,
+    `https://todo-in-ts.onrender.com/todo/deleteTodo/${id}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

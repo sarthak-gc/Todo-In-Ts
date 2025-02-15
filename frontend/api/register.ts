@@ -7,12 +7,15 @@ interface FormData {
   password: string;
 }
 const register = async ({ firstName, lastName, email, password }: FormData) => {
-  const response = await axios.post("http://localhost:3000/user/register", {
-    firstName,
-    lastName,
-    email,
-    password,
-  });
+  const response = await axios.post(
+    "https://todo-in-ts.onrender.com/user/register",
+    {
+      firstName,
+      lastName,
+      email,
+      password,
+    }
+  );
 
   return response;
 };

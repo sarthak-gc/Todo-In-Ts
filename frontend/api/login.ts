@@ -4,10 +4,13 @@ interface Credentials {
   password: string;
 }
 const login = async ({ email, password }: Credentials) => {
-  const response = await axios.post("http://localhost:3000/user/login", {
-    email,
-    password,
-  });
+  const response = await axios.post(
+    "https://todo-in-ts.onrender.com/user/login",
+    {
+      email,
+      password,
+    }
+  );
   return response;
 };
 

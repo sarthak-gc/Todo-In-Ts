@@ -11,7 +11,7 @@ app.get("/", (req: Request, res: Response) => {
     message: "This is home route",
   });
 });
-// app.use(cors);
+app.use(cors());
 app.use(express.json());
 app.use("/user", userRoute);
 app.use("/todo", todoRoute);

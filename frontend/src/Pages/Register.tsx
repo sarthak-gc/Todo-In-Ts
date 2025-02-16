@@ -38,12 +38,12 @@ const Register = () => {
     }
   };
   return (
-    <div className="bg-black w-screen h-screen flex justify-center items-center">
+    <div className="bg-black w-screen h-screen flex justify-center items-center px-12 sm:px-12">
       <form
         onSubmit={(e) => {
           handleSubmit(e);
         }}
-        className="bg-black p-8 rounded-lg w-1/4 shadow-lg border border-gray-700"
+        className="bg-black p-8 rounded-lg  w-full    lg:w-3/5   shadow-lg border border-gray-700"
       >
         <FormHeading title={"Register"} />
 

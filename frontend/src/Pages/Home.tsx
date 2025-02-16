@@ -8,7 +8,7 @@ import Line from "../Components/Line";
 
 const Home = () => {
   return (
-    <div className="bg-black w-screen h-screen text-white">
+    <div className="bg-black w-screen h-screen overflow-auto text-white">
       <Navbar />
       <Line />
       <Hero />

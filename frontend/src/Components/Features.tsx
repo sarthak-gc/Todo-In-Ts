@@ -1,8 +1,8 @@
 const Features = () => {
   return (
-    <div className="bg-red200 h-[20%]">
-      <ul className="w-full  h-full  flex  justify-between items-center px-20 text-4xl">
-        <li className="flex  gap-3 items-center justify-center">
+    <div className=" md:h-[20%]  h-[50%] ">
+      <ul className="w-full h-full grid grid-cols-1  md:grid-cols-2  lg:px-20   text-4xl">
+        <li className="flex px-8 md:px-0 sm:text-center md:border-0 sm:border-gray-700 border-b gap-3 items-center sm:py-7 whitespace-nowrap  ">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const Features = () => {
           </span>
           Create Todo Easily
         </li>
-        <li className="flex gap-3 items-center justify-center">
+        <li className="flex   px-8 md:px-0 sm:text-center md:border-0 sm:border-gray-700 border-b gap-3 items-center sm:py-7 whitespace-nowrap  ">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const Features = () => {
           </span>
           Set Priority
         </li>
-        <li className="flex gap-3 items-center justify-center">
+        <li className="flex px-8 md:px-0 sm:text-center md:border-0 sm:border-gray-700 border-b gap-3 items-center sm:py-7 whitespace-nowrap  ">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const Features = () => {
           </span>
           Set Due Date
         </li>
-        <li className="flex gap-3 items-center justify-center">
+        <li className="flex px-8 md:px-0  sm:text-center  gap-3 items-center sm:py-7 whitespace-nowrap  ">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

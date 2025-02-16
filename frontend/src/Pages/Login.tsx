@@ -34,9 +34,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="bg-black w-screen h-screen flex justify-center items-center">
+    <div className="bg-black w-screen h-screen flex justify-center items-center px-12 sm:px-12">
       <form
-        className="bg-black p-8 rounded-lg w-1/4 shadow-lg border border-gray-700"
+        className="lg:bg-black p-8 rounded-lg  w-full  md:w-2/3 lg:w-2/5   shadow-lg border border-gray-700 "
         onSubmit={(e) => {
           handleSubmit(e);
         }}

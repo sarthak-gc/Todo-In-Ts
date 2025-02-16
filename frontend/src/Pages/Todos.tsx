@@ -68,6 +68,7 @@ const Todos = () => {
 
     await changeStatus(id);
   };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -93,6 +94,7 @@ const Todos = () => {
     await deleteTodo(id);
     setTodos((prev) => prev.filter((todo) => todo._id !== id));
   };
+
   const sortTodos = (todos: Todo[]) => {
     switch (sortCriteria) {
       case "priority":
@@ -122,9 +124,17 @@ const Todos = () => {
   };
 
   return (
-    <div className="bg-black w-screen h-screen flex flex-col items-center p-8 absolute">
+    <div className="bg-black w-full h-screen overflow-scroll flex flex-col items-center p-8">
+      <nav className="w-full sm:px-20  border-b border-0 p-4 flex justify-between items-center fixed h-[80px] top-0 border-gray-700 bg-black">
+        <h1 className="text-4xl  text-white cursor-pointer font-bold tracking-wide whitespace-nowrap flex justify-center ">
+          Jot It
+        </h1>
+        <UserMenu handleDeleteAllTodos={handleDeleteAllTodos} />
+      </nav>
+
+      {/* Form Section */}
       <form
-        className="bg-black p-10 rounded-lg w-1/2  shadow-lg border border-gray-700 h-fit mb-6"
+        className="bg-black p-8 sm:p-10 rounded-lg w-full sm:w-4/5 max-w-[1200px] shadow-lg border border-gray-700 h-fit mb-6 mt-24"
         onSubmit={handleSubmit}
       >
         <FormHeading title={"Add Todo"} />
@@ -133,7 +143,6 @@ const Todos = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="mb-6">
               <Label forHtml={"title"} label="Todo Title" />
-
               <TodoInput
                 value={todo.title}
                 handleChange={handleChange}
@@ -145,7 +154,6 @@ const Todos = () => {
 
             <div className="mb-6">
               <Label forHtml={"priority"} label="Priority" />
-
               <select
                 id="priority"
                 className="w-full p-4 bg-gray-900 text-white border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
@@ -174,7 +182,6 @@ const Todos = () => {
 
             <div className="mb-6">
               <Label forHtml={"timeLimit"} label="Time Limit" />
-
               <TodoInput
                 value={todo.timeLimit}
                 handleChange={handleChange}
@@ -187,7 +194,6 @@ const Todos = () => {
 
           <div className="mb-6">
             <Label forHtml={"description"} label="Todo Description" />
-
             <TodoInput
               value={todo.description}
               handleChange={handleChange}
@@ -198,14 +204,15 @@ const Todos = () => {
           </div>
         </div>
 
-        <div className=" items-center justify-center text-center">
-          <button className="px-6 py-3 text-white bg-black border-2 w-full border-gray-700 cursor-pointer  hover:text-gray-300 rounded-lg shadow-md  text-2xl hover:border-gray-500">
+        <div className="items-center justify-center text-center">
+          <button className="px-6 py-3 text-white bg-black border-2 w-full border-gray-700 cursor-pointer hover:text-gray-300 rounded-lg shadow-md text-2xl hover:border-gray-500">
             Add Todo
           </button>
         </div>
       </form>
       <Line />
-      <div className="mt-8 w-1/2 max-w-4xl h-2/5  overflow-auto">
+
+      <div className="mt-8 w-full sm:w-4/5 max-w-[1200px] min-h-[400px]  overflow-auto">
         <div className="sticky top-0 z-10 flex justify-between items-center p-4 rounded-t-lg bg-gray-800 text-white shadow-lg">
           <h3 className="text-xl font-bold">Your Todos</h3>
           <select
@@ -220,10 +227,11 @@ const Todos = () => {
           </select>
         </div>
 
-        <div className=" overflow-auto mt-2  rounded-b-lg shadow-lg">
+        <div className="mt-2 rounded-b-lg shadow-lg">
           {sortedTodos.length > 0 ? (
             sortedTodos.map((todo) => (
               <Todo
+                key={todo._id}
                 todo={todo}
                 handleDelete={handleDelete}
                 changeWorkStatus={changeWorkStatus}
@@ -236,7 +244,6 @@ const Todos = () => {
           )}
         </div>
       </div>
-      <UserMenu handleDeleteAllTodos={handleDeleteAllTodos} />
     </div>
   );
 };

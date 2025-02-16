@@ -21,7 +21,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ handleDeleteAllTodos }) => {
     <div className="relative">
       <button
         onClick={toggleMenu}
-        className="fixed top-4 right-4 flex flex-col items-center space-y-1 w-8 h-8 bg-gray-800 p-2 rounded-lg"
+        className="  flex flex-col items-center space-y-1 w-12 h-12 bg-black border-gray-700 border-2 p-4  rounded-lg z-20"
       >
         <div className="w-6 h-0.5 bg-white"></div>
         <div className="w-6 h-0.5 bg-white"></div>
@@ -29,12 +29,12 @@ const UserMenu: React.FC<UserMenuProps> = ({ handleDeleteAllTodos }) => {
       </button>
 
       {menuOpen && (
-        <div className="fixed right-4 top-16 bg-gray-800 text-white p-4 rounded-lg shadow-lg z-10">
+        <div className="fixed right-4 top-16 sm:top-20 bg-gray-800 text-white p-4 rounded-lg shadow-lg z-10">
           <ul>
             <li>
               <button
                 onClick={handleLogout}
-                className="block py-2 px-4 hover:bg-gray-700 rounded-md"
+                className="block w-full text-start py-2 px-4 hover:bg-gray-700 rounded-md"
               >
                 Logout
               </button>

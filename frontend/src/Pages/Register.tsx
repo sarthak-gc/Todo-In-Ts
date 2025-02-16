@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import register from "../../api/register";
 import Label from "../Components/Label";
 import Input from "../Components/Input";
@@ -27,11 +27,15 @@ const Register = () => {
     });
   };
 
+  const navigate = useNavigate();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await register(formData);
       alert(response.data);
+      if (response.status === 201) {
+        navigate("/login");
+      }
       return response;
     } catch (error) {
       console.error("Registration failed:", error);
